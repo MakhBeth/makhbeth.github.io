@@ -1,0 +1,1 @@
+@layer base,layout;.message{background-color:#639;padding:1rem;color:#fff}@layer layout{.message{border:10px solid aqua}}@layer base{.message{border:10px solid gold}}
