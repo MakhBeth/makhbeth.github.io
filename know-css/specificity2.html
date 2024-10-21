@@ -1,4 +1,18 @@
-<h1 class="accent">Specificity</h1>
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>23 Oct 2024</span>
+      </header>
+      <section><h1 class="accent">Specificity</h1>
 <style>
   .fragment {
     background: white;
@@ -18,26 +32,36 @@
   }
 </style>
 <p>
-  <code-highlight language="css"
-    ><style>
-      .red {
-        color: red;
+  <pre><code class="hljs language-css">
+      <span class="hljs-selector-class">.red</span> {
+        <span class="hljs-attribute">color</span>: red;
       }
-      .blue {
-        color: blue;
+      <span class="hljs-selector-class">.blue</span> {
+        <span class="hljs-attribute">color</span>: blue;
       }
-      .red.red {
-        color: green;
+      <span class="hljs-selector-class">.red</span><span class="hljs-selector-class">.red</span> {
+        <span class="hljs-attribute">color</span>: green;
       }
-    </style>
-  </code-highlight>
+    
+  </code></pre>
 </p>
 <p>
-  <code-highlight language="html">
-    &lt;div class=&quot;red blue&quot;&gt;COLOR ME, SENPAI!&lt;/div&gt;
-  </code-highlight>
+  <pre><code class="hljs language-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"red blue"</span>&gt;</span>COLOR ME, SENPAI!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  </code></pre>
 </p>
 
 <div class="fragment red blue">COLOR ME, SENPAI</div>
 
 <nav-component to="./usethespecificity.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

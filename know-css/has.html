@@ -1,16 +1,41 @@
-<h1 class="accent">:has()</h1>
-<img src="/giphy-279119643.gif" alt=":has(god)" />
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>23 Oct 2024</span>
+      </header>
+      <section><h1 class="accent">:has()</h1>
+<img src="/giphy-279119643.gif" alt=":has(god)">
 <div class="specificity-calc-container fragment">
-  <code-highlight language="css">
-    <code>form:has(:focus-visible)</code>
-  </code-highlight>
+  <pre><code class="hljs language-css">
+    <span class="hljs-selector-tag">form</span><span class="hljs-selector-pseudo">:has</span>(<span class="hljs-selector-pseudo">:focus-visible</span>)
+  </code></pre>
   <specificity-calc>form:has(:focus-visible)</specificity-calc>
 </div>
 <div class="specificity-calc-container fragment">
-  <code-highlight language="css">
-    <code>my-element:has(> :nth-child(4))</code>
-  </code-highlight>
-  <specificity-calc>my-element:has(> :nth-child(4))</specificity-calc>
+  <pre><code class="hljs language-css">
+    my-element<span class="hljs-selector-pseudo">:has</span>(&gt; <span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">4</span>))
+  </code></pre>
+  <specificity-calc>my-element:has(&gt; :nth-child(4))</specificity-calc>
 </div>
 
 <nav-component to="./nth-child.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>
