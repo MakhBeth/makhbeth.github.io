@@ -1,0 +1,364 @@
+@import "normalize.css";
+@import "variables.css";
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-out-to-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-out-to-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes slide-in-from-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+:root {
+	view-transition-name: none;
+}
+main > section {
+	view-transition-name: content;
+}
+
+nav-component {
+	view-transition-name: nav;
+}
+
+::view-transition-group(*) {
+	animation-duration: 0.5s;
+}
+
+:view-transition-group(nav) {
+	display: none;
+}
+
+::view-transition-old(content) {
+	animation-name: slide-out-to-left;
+}
+::view-transition-new(content) {
+	animation-name: slide-in-from-right;
+}
+
+html:active-view-transition-type(backwards) {
+	&::view-transition-old(content) {
+		animation-name: slide-out-to-right;
+	}
+	&::view-transition-new(content) {
+		animation-name: slide-in-from-left;
+	}
+}
+
+
+body::before,
+body::after {
+	height: 100%;
+	inset: 0;
+	position: fixed;
+	width: 100%;
+	color: var(--color-text);
+	content: "";
+	display: block;
+	isolation: isolate;
+	z-index: -1;
+
+	--s: 100px; /* control the size*/
+	--c1: #999;
+	--c2: var(--color-background);
+	display: block;
+
+	--_g: #9990 90deg, var(--c1) 0;
+	background: conic-gradient(from 90deg at 2px 2px, var(--_g)),
+		conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+	background-size: var(--s) var(--s), calc(var(--s) / 5) calc(var(--s) / 5);
+	background-attachment: fixed;
+}
+
+body::after {
+	background: radial-gradient(
+		oklch(from var(--color-background) l c h / 0.8),
+		oklch(from var(--color-background) l c h / 0.95)
+	);
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-family-primary);
+	font-size: 150%;
+	text-align: center;
+}
+
+section {
+	min-height: calc(100vh - 4rem);
+	box-sizing: border-box;
+	width: 100%;
+	align-content: center;
+	scroll-snap-align: start;
+}
+
+pre {
+	text-align: left;
+	overflow-x: auto;
+	border-radius: 0.5rem;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fragment {
+	opacity: 0;
+	animation: fadeIn 1s ease-out forwards;
+	animation-timeline: scroll(root);
+	animation-range: calc((var(--fragment-count) - 1) * 100dvh)
+		calc(var(--fragment-count) * 100dvh);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fragment {
+		animation: none;
+		opacity: 1;
+	}
+}
+
+main {
+	height: calc(100vh - 2rem);
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 1rem;
+	font-size: var(--font-size-md);
+}
+
+body {
+	height: calc(100dvh * (1 + var(--fragment-count, 0)));
+	box-sizing: border-box;
+}
+
+:root {
+	--fragment-count: 0;
+}
+
+a {
+	color: var(--color-primary);
+
+	&:hover {
+		color: var(--color-accent);
+	}
+
+	&:focus,
+	&:focus-visible {
+		color: var(--color-accent);
+		outline: solid;
+		outline-offset: 4px;
+		outline-color: var(--color-accent);
+		text-decoration: none;
+	}
+}
+
+body:has(:nth-child(1 of .fragment)) {
+	--fragment-count: 1;
+}
+body:has(:nth-child(2 of .fragment)) {
+	--fragment-count: 2;
+}
+body:has(:nth-child(3 of .fragment)) {
+	--fragment-count: 3;
+}
+body:has(:nth-child(4 of .fragment)) {
+	--fragment-count: 4;
+}
+body:has(:nth-child(5 of .fragment)) {
+	--fragment-count: 5;
+}
+
+:nth-child(1 of .fragment) {
+	--fragment-count: 1;
+}
+:nth-child(2 of .fragment) {
+	--fragment-count: 2;
+}
+:nth-child(3 of .fragment) {
+	--fragment-count: 3;
+}
+:nth-child(4 of .fragment) {
+	--fragment-count: 4;
+}
+:nth-child(5 of .fragment) {
+	--fragment-count: 5;
+}
+
+nav-component {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+header, footer {
+	position: fixed;
+	font-size: var(--font-size-xxs);
+	width: 100%;
+	opacity: 0.8;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	left: 0;
+	padding: 0.25rem 1rem;
+}
+
+header {
+		width: 100%;
+	top:0;
+}
+
+footer {
+	width: 50%;
+	bottom: 0;
+}
+
+.accent {
+	color: var(--color-accent);
+}
+
+.light {
+	color: var(--color-text-light);
+}
+
+dl {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 0.5em;
+}
+
+dt, dd {
+	flex: 1 0 calc(50% - 0.5em);
+
+	&:where(dt) {
+		text-align: right;
+		font-weight: bold;
+		color: var(--color-text-light);
+	}
+	&:where(dd) {
+		text-align: left;
+	}
+}
+
+ul {
+	text-align: start;
+}
+
+p {
+	width: min(50rem, 100%);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+blockquote {
+	text-align: start;
+	display: inline-block;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: var(--color-background);
+	color: var(--color-text-light);
+	font-family: 'Courier New', Courier, monospace;
+	width: min(50rem, 100%);
+	margin: 0 auto;
+	&::before {
+		content: '”';
+		transform: scale(2);
+		display: inline-block;
+	}
+
+	cite {
+		font-weight: 900;
+		display: block;
+		text-align: end;
+	}
+}
+
+[data-example] {
+	border: 1.5rem solid var(--color-accent);
+	padding: 1rem;
+	width: 100%;
+	background-color: var(--color-background);
+	position: relative;
+	isolation: isolate;
+
+	&::before {
+		content: attr(data-example);
+		position: absolute;
+		top: -1.4rem;
+		left: -1.4rem;
+		background-color: var(--color-background);
+		padding: 0.125em 0.25em;
+		opacity: 0.8;
+		border-radius: 0.5em;
+		display: block;
+		font-size: var(--font-size-xxs);
+	}
+}
+
+table {
+	margin: 0 auto;
+	text-align: left;
+	tr {
+		background-color: var(--color-background);
+		margin: 0; padding: 0;
+	}
+	
+	td {
+		padding: 0.5rem;
+		border: 0;
+		tr:not(:last-of-type) & {
+			border-bottom: 1px solid var(--color-text-light);
+		}
+	}
+}
+
+specificity-calc {
+	opacity: 0;
+}
+.specificity-calc-container {
+	isolation: isolate;
+	position: relative;
+	max-width: min-content;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+
+	specificity-calc {
+		position: absolute;
+		right: 0;
+		top: -1em;
+	}
+}
+
+img {
+	margin: 0 auto 1rem;
+}

@@ -1,50 +1,24 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite + TS</title>
-    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
-    <link rel="stylesheet" crossorigin href="/assets/layer-CSmCGoea.css">
-  </head>
-  <body>
-    <main>
-      <header>
-        <span>Davide Di Pumpo</span>
-        <span>23 Oct 2024</span>
-      </header>
-      <section>
+<link rel="stylesheet" href="./layer.css" />
 <h3 class="accent">@layer</h3>
 
-<pre><code class="hljs language-css">  <span class="hljs-keyword">@layer</span> base, layout;
-  <span class="hljs-selector-class">.message</span> {
-    <span class="hljs-attribute">background-color</span>: rebeccapurple;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
-    <span class="hljs-attribute">color</span>: white;
+<code-highlight language="css">  @layer base, layout;
+  .message {
+    background-color: rebeccapurple;
+    padding: 1rem;
+    color: white;
   }
-  <span class="hljs-keyword">@layer</span> layout {
-    <span class="hljs-selector-class">.message</span> {
-      <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid aqua;
+  @layer layout {
+    .message {
+      border: 10px solid aqua;
     }
   }
-  <span class="hljs-keyword">@layer</span> base {
-    <span class="hljs-selector-class">.message</span> {
-      <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid gold;
+  @layer base {
+    .message {
+      border: 10px solid gold;
     }
-  }</code></pre>
+  }</code-highlight>
 <br>
 <div data-example="layers">
   <div class="message">Hello Za Warudo!</div>
 </div>
 <nav-component to="./root-shadow.html"></nav-component>
-</section>
-      <footer>You don't know CSS</footer>
-    </main>
-  
-  <style>
-    @view-transition {
-      navigation: auto;
-    }
-  </style>
-
-</body></html>
