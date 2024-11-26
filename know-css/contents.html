@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>23 Oct 2024</span>
+      </header>
+      <section><h4 class="accent">Container Queries</h4>
+<style>
+  .code-block {
+    display: flex;
+  }
+  [data-example='display-contents'] {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  [data-example='display-contents'] div {
+    border: 10px solid red;
+    max-width: 5rem;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    min-width: max-content;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .contents.contents {
+    display: contents;
+    align-content: center;
+  }
+</style>
+
+<div data-example="display-contents">
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div class="contents">
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+</div>
+<div class="code-block">
+  <pre><code class="hljs language-javascript">
+    &lt;div&gt;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>&lt;/div&gt;
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contents"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  </code></pre>
+  <pre><code class="hljs language-javascript">
+    
+      .<span class="hljs-property">contents</span> {
+        <span class="hljs-attr">display</span>: contents;
+      }
+    
+  </code></pre>
+</div>
+<nav-component to="./text-wrap.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>23 Oct 2024</span>
+      </header>
+      <section><h4 class="accent">Grid instead of absolute positioning</h4>
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .grid > div {
+    border: 1px solid var(--color-accent);
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .grid > div:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .grid > div:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .grid > div:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: rgba(var(--color-accent-rgb), 0.2);
+    z-index: 1;
+  }
+</style>
+
+<div data-example="grid">
+  <div class="grid">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</div>
+
+<pre><code class="hljs language-javascript">
+  
+    .<span class="hljs-property">grid</span> &gt; <span class="hljs-attr">div</span>:nth-<span class="hljs-title function_">child</span>(<span class="hljs-params"><span class="hljs-number">4</span></span>) {
+      grid-<span class="hljs-attr">column</span>: <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;
+      grid-<span class="hljs-attr">row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>;
+      background-<span class="hljs-attr">color</span>: <span class="hljs-title function_">rgba</span>(<span class="hljs-title function_">var</span>(--color-accent-rgb), <span class="hljs-number">0.2</span>);
+      z-<span class="hljs-attr">index</span>: <span class="hljs-number">1</span>;
+    }
+  
+</code></pre>
+
+<nav-component to="./clamp.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

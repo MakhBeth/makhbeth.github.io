@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/Specificity-y16xexlz.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/Specificity-CfRVIDZb.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>23 Oct 2024</span>
+      </header>
+      <section><h1 class="accent">Container Queries</h1>
+<style>
+  .container {
+    container-type: inline-size;
+    margin-bottom: 10px;
+  }
+
+  .element {
+    background-color: var(--bcg);
+    color: white;
+  }
+  .element {
+    --bcg: rgb(from red r g b / 0.2);
+    border: 3px solid red;
+  }
+
+  @container (width > 5rem) {
+    .element {
+      --bcg: rgb(from green r g b / 0.2);
+      border: 3px solid green;
+    }
+  }
+
+  @container (width > 15rem) {
+    .element {
+      --bcg: rgb(from blue r g b / 0.2);
+      border: 3px solid blue;
+    }
+  }
+
+  :nth-child(1 of .container) {
+    width: 30rem;
+  }
+  :nth-child(2 of .container) {
+    width: 15rem;
+  }
+  :nth-child(3 of .container) {
+    width: 5rem;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0 auto 1rem;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+</style>
+
+<div class="row">
+  <div class="container">
+    <div class="element">30rem</div>
+  </div>
+  <div class="container">
+    <div class="element">15rem</div>
+  </div>
+  <div class="container">
+    <div class="element">5rem</div>
+  </div>
+</div>
+
+<pre><code class="hljs language-javascript">
+  .<span class="hljs-property">element</span> { 
+    --<span class="hljs-attr">bcg</span>: red; 
+    @<span class="hljs-title function_">container</span> (width &gt; 5rem) { 
+      --<span class="hljs-attr">bcg</span>: #green;
+    } 
+    @<span class="hljs-title function_">container</span> (width &gt; 15rem) {
+      --<span class="hljs-attr">bcg</span>: blue;
+    } 
+  }
+</code></pre>
+
+<nav-component to="./misc.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>
