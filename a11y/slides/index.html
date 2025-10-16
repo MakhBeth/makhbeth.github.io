@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Accessible Front-End</title>
+		<script type="module" crossorigin src="/assets/baseline-rp8ZPKiV.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/baseline-C1LW-_GY.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>14 Oct 2025</span>
+		</header>
+		<main>
+			<section><h1 class="accent">
+	<span>Let's build an accessible <s>Front-End</s> <mark>component</mark>!</span>
+</h1>
+<h2 class="light">
+	Milan<sup><small>(?)</small></sup>, 14 October 2025
+</h2>
+
+<style>
+	h1 {
+		text-wrap: balance;
+	}
+	s::before,
+	s::after {
+		clip-path: inset(100%);
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+	s::before {
+		content: " [start of stricken text] ";
+	}
+	s::after {
+		content: " [end of stricken text] ";
+	}
+</style>
+
+<nav-component to="./fun-fact.html" no-back=""></nav-component>
+</section>
+		</main>
+		<footer>Accessible Front-End</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

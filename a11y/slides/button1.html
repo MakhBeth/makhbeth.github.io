@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Accessible Front-End</title>
+		<script type="module" crossorigin src="/assets/baseline-rp8ZPKiV.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/baseline-C1LW-_GY.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>14 Oct 2025</span>
+		</header>
+		<main>
+			<section><button class="btn">AFFORDANCE!</button>
+<div class="btn" role="button" tabindex="0">AFFORDANCE!</div>
+
+<style>
+	button,
+	.btn {
+		all: initial;
+		cursor: pointer;
+		margin-bottom: 1em;
+		font-size: var(--font-size-xl);
+		padding: 0.5em 1em;
+		background-color: #6699cc;
+		border-radius: 8px;
+
+		--_focus-ring-distance: 0.2rem;
+		--_focus-ring-color-background: white;
+
+		&:focus {
+			--_focus-ring-color-inner: hsl(0 0% 100%);
+			--_focus-ring-color-outer: hsl(0 0% 0%);
+
+			box-shadow:
+				0 0 0 var(--_focus-ring-distance) var(--_focus-ring-color-background),
+				0 0 0 calc(var(--_focus-ring-distance) * 2) var(--_focus-ring-color-inner),
+				0 0 0 calc(var(--_focus-ring-distance) * 3) var(--_focus-ring-color-background),
+				0 0 0 calc(var(--_focus-ring-distance) * 4) var(--_focus-ring-color-outer);
+			outline: none;
+		}
+
+		@supports (color: hsl(from hsl(0 0% 100%) h s l)) {
+			&:focus {
+				--_focus-ring-color-inner: currentColor;
+				--_focus-ring-color-outer: hsl(from var(--_focus-ring-color-inner) calc(h + 180) s l);
+				box-shadow:
+					0 0 0 var(--_focus-ring-distance) var(--_focus-ring-color-background),
+					0 0 0 calc(var(--_focus-ring-distance) * 2) var(--_focus-ring-color-inner),
+					0 0 0 calc(var(--_focus-ring-distance) * 3) var(--_focus-ring-color-background),
+					0 0 0 calc(var(--_focus-ring-distance) * 4) var(--_focus-ring-color-outer);
+				outline: none;
+			}
+		}
+	}
+</style>
+
+<nav-component to="accordion0.html"></nav-component>
+
+<script>
+	const clickHandler = () => {
+		console.log("Button clicked!");
+	};
+</script>
+
+<script>
+	document.querySelectorAll(".btn").forEach((btn) =>
+		btn.addEventListener("click", (event) => {
+			clickHandler();
+		})
+	);
+</script>
+
+<script>
+	document.querySelectorAll("div.btn").forEach((btn) => {
+		btn.addEventListener("keydown", (event) => {
+			if (event.key === "Enter") {
+				clickHandler();
+			}
+		});
+		btn.addEventListener("keyup", (event) => {
+			if (event.key === " ") {
+				clickHandler();
+			}
+		});
+	});
+</script>
+</section>
+		</main>
+		<footer>Accessible Front-End</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>
