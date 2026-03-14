@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h4 class="accent">sibling-count() / sibling-index()</h4>
+<style>
+  .sibling-demo {
+    max-width: 30rem;
+    margin: 1rem auto;
+  }
+  .sibling-demo ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sibling-demo li {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: var(--border-radius-sm);
+    background: oklch(from var(--color-primary) l c h / calc(1 - sibling-index() / sibling-count()));
+    opacity: 0;
+    animation: sibling-fade-in 0.4s ease forwards;
+    animation-delay: calc(sibling-index() * 0.1s);
+    font-size: var(--font-size-sm);
+    text-align: left;
+  }
+  @keyframes sibling-fade-in {
+    from { opacity: 0; transform: translateX(-1rem); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+</style>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-tag">li</span> {
+    <span class="hljs-attribute">animation-delay</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">sibling-index</span>() * <span class="hljs-number">0.1s</span>);
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">1</span> - <span class="hljs-built_in">sibling-index</span>() / <span class="hljs-built_in">sibling-count</span>());
+  }
+</code></pre>
+
+<div class="sibling-demo fragment">
+  <ul>
+    <li>First item:  strongest opacity</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth item</li>
+    <li>Fifth item</li>
+    <li>Sixth item:  lightest opacity</li>
+  </ul>
+</div>
+
+<p class="fragment light">Staggered animations + proportional sizing. No JS counters. Part of Interop 2026.</p>
+
+<baseline-status featureid="sibling-count"></baseline-status>
+<nav-component to="./contrast-color.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

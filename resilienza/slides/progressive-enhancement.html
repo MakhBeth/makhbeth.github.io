@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Frontend Resilience</title>
+		<script type="module" crossorigin src="/resilienza/assets/baseline-CfV8gfof.js"></script>
+		<link rel="stylesheet" crossorigin href="/resilienza/assets/baseline-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>30 Mar 2026</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Progressive Enhancement</h1>
+
+<p>Start with HTML. Layer CSS. Then JavaScript.</p>
+
+<div class="layers fragment">
+	<div class="layer layer-html">HTML — content &amp; structure</div>
+	<div class="layer layer-css">CSS — presentation &amp; interaction</div>
+	<div class="layer layer-js">JS — enhanced behavior</div>
+</div>
+
+<div class="fragment">
+	<h3>vs Graceful Degradation</h3>
+	<p class="light">Build the full experience first, then handle fallbacks for older/limited environments.</p>
+</div>
+
+<p class="fragment accent">At the very least: graceful degradation.<br>The goal: progressive enhancement.</p>
+
+<style>
+	.layers {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+		margin: 1.5rem auto;
+	}
+	.layer {
+		padding: 0.75rem 2rem;
+		border-radius: var(--border-radius-md);
+		font-size: var(--font-size-md);
+		font-weight: bold;
+		width: 100%;
+		max-width: 30rem;
+	}
+	.layer-html {
+		background: var(--color-primary);
+		color: var(--color-text);
+	}
+	.layer-css {
+		background: var(--color-secondary);
+		color: var(--color-background);
+		max-width: 25rem;
+	}
+	.layer-js {
+		background: var(--color-accent);
+		color: var(--color-background);
+		max-width: 20rem;
+	}
+</style>
+
+<nav-component to="./checklist.html"><a href="./checklist.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Frontend Resilience</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

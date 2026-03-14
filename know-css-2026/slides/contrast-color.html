@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h4 class="accent">contrast-color()</h4>
+<style>
+  .contrast-demo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    max-width: 35rem;
+    margin: 1rem auto;
+  }
+  .contrast-demo > div {
+    padding: 1.5rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    background-color: var(--bg);
+    color: contrast-color(var(--bg));
+  }
+</style>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--brand-color);
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">contrast-color</span>(<span class="hljs-built_in">var</span>(--brand-color));
+  }
+</code></pre>
+
+<div class="contrast-demo fragment">
+  <div style="--bg: oklch(90% 0.15 90)">Light</div>
+  <div style="--bg: oklch(30% 0.15 270)">Dark</div>
+  <div style="--bg: oklch(60% 0.2 30)">Red</div>
+  <div style="--bg: oklch(85% 0.2 90)">Yellow</div>
+  <div style="--bg: oklch(50% 0.2 150)">Green</div>
+  <div style="--bg: oklch(40% 0.2 240)">Blue</div>
+  <div style="--bg: oklch(70% 0.2 330)">Pink</div>
+  <div style="--bg: oklch(95% 0 0)">White</div>
+</div>
+
+<p class="fragment light">Remember the manual <code>clamp() + oklch()</code> hack from v1?<br>This is the native solution. Safari 26+, Firefox.</p>
+
+<baseline-status featureid="contrast-color"></baseline-status>
+<nav-component to="./trig-functions.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

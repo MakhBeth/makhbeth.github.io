@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h4 class="accent">Typed attr()</h4>
+<style>
+  .attr-demo {
+    margin: 1rem auto;
+    max-width: 35rem;
+  }
+  .attr-grid {
+    display: grid;
+    grid-template-columns: repeat(attr(data-columns type(<number>), 3), 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .attr-grid > div {
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    font-weight: bold;
+    background: attr(data-bg type(<color>), var(--color-primary));
+    color: var(--color-background);
+  }
+</style>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"grid"</span> <span class="hljs-attr">data-columns</span>=<span class="hljs-string">"4"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-bg</span>=<span class="hljs-string">"oklch(60% 0.2 30)"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-bg</span>=<span class="hljs-string">"oklch(60% 0.2 90)"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-class">.grid</span> {
+    <span class="hljs-attribute">grid-template-columns</span>:
+      <span class="hljs-built_in">repeat</span>(<span class="hljs-built_in">attr</span>(data-columns <span class="hljs-built_in">type</span>(&lt;number&gt;), <span class="hljs-number">3</span>), <span class="hljs-number">1</span>fr);
+  }
+  <span class="hljs-selector-class">.grid</span> &gt; <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">attr</span>(data-bg <span class="hljs-built_in">type</span>(&lt;color&gt;), black);
+  }
+</code></pre>
+
+<div class="attr-demo">
+  <div class="attr-grid" data-columns="4">
+    <div data-bg="oklch(60% 0.2 30)">1</div>
+    <div data-bg="oklch(60% 0.2 90)">2</div>
+    <div data-bg="oklch(60% 0.2 150)">3</div>
+    <div data-bg="oklch(60% 0.2 210)">4</div>
+    <div data-bg="oklch(60% 0.2 270)">5</div>
+    <div data-bg="oklch(60% 0.2 330)">6</div>
+    <div data-bg="oklch(60% 0.2 30)">7</div>
+    <div data-bg="oklch(60% 0.2 90)">8</div>
+  </div>
+</div>
+
+<p class="light" style="font-size: var(--font-size-sm); margin: 0.5rem auto; text-align: center;">
+  Available types: <code>&lt;number&gt;</code> <code>&lt;integer&gt;</code> <code>&lt;color&gt;</code> <code>&lt;length&gt;</code> <code>&lt;angle&gt;</code> <code>&lt;percentage&gt;</code> <code>&lt;string&gt;</code>
+</p>
+
+<div class="fragment">
+  <p class="accent">CSS has types now. Meanwhile JavaScript...</p>
+  <p><code>"2" + 2 === "22"</code></p>
+</div>
+
+<baseline-status featureid="attr"></baseline-status>
+<nav-component to="./css-carousels.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

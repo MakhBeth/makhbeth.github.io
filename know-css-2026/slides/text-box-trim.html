@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h4 class="accent">text-box-trim / text-box</h4>
+<style>
+  .trim-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 35rem;
+    margin: 1rem auto;
+  }
+  .trim-demo .card {
+    background: var(--color-background);
+    border: 1px solid var(--color-text-light);
+    border-radius: var(--border-radius-md);
+    padding: 0;
+  }
+  .trim-demo h2 {
+    font-size: var(--font-size-3xl);
+    margin: 0;
+    padding: 0 0.25em;
+    background: oklch(from var(--color-accent) l c h / 0.15);
+  }
+  .trim-demo .trimmed h2 {
+    text-box: trim-both cap alphabetic;
+  }
+  .trim-demo .label {
+    padding: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    border-top: 1px solid var(--color-text-light);
+  }
+</style>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-selector-tag">text</span>-box: trim-both cap alphabetic;
+  }
+</code></pre>
+
+<div class="trim-demo fragment">
+  <div class="card">
+    <h2>Ag</h2>
+    <div class="label">default (extra space above/below)</div>
+  </div>
+  <div class="card trimmed">
+    <h2>Ag</h2>
+    <div class="label">text-box: trim-both</div>
+  </div>
+</div>
+
+<p class="fragment light">Pixel-perfect vertical text alignment. No more magic numbers and weird line-height</p>
+
+<baseline-status featureid="text-box"></baseline-status>
+<nav-component to="./sibling-functions.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

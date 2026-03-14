@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Frontend Resilience</title>
+		<script type="module" crossorigin src="/resilienza/assets/baseline-CfV8gfof.js"></script>
+		<link rel="stylesheet" crossorigin href="/resilienza/assets/baseline-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>30 Mar 2026</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Offline First</h1>
+
+<p>The site should work even offline or with an unstable network.</p>
+
+<ul class="fragment">
+	<li><strong>Service Workers</strong> — intercept requests, serve from cache</li>
+	<li><strong>Cache API</strong> — store responses for offline use</li>
+	<li><strong>PWA</strong> — installable, resilient, native-like</li>
+</ul>
+
+<div class="fragment">
+	<p class="light">Even simple strategies make a huge difference:</p>
+	<ul>
+		<li><code>&lt;link rel="preload"&gt;</code> — critical resources first</li>
+		<li><code>&lt;link rel="prefetch"&gt;</code> — next page, ready before the click</li>
+		<li>Stale-while-revalidate — show cached, update in background</li>
+	</ul>
+</div>
+
+<style>
+	ul {
+		font-size: var(--font-size-lg);
+		max-width: 45rem;
+		margin: 1rem auto;
+	}
+</style>
+
+<nav-component to="./green-performance.html"><a href="./green-performance.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Frontend Resilience</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

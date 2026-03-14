@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h4 class="accent">corner-shape</h4>
+<style>
+  .corner-demo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 35rem;
+    margin: 1rem auto;
+  }
+  .corner-demo > div {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 2rem;
+    background: var(--color-accent);
+    color: var(--color-background);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+  }
+  .corner-demo .squircle { corner-shape: squircle; }
+  .corner-demo .scoop { corner-shape: scoop; }
+  .corner-demo .bevel { corner-shape: bevel; }
+  .corner-demo .notch { corner-shape: notch; }
+</style>
+
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-class">.card</span> {
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2rem</span>;
+    corner-shape: squircle; <span class="hljs-comment">/* or scoop, bevel, notch */</span>
+  }
+</code></pre>
+
+<div class="corner-demo fragment">
+  <div class="squircle">squircle</div>
+  <div class="scoop">scoop</div>
+  <div class="bevel">bevel</div>
+  <div class="notch">notch</div>
+</div>
+
+<p class="light">Beyond border-radius</p>
+
+<baseline-status featureid="corner-shape"></baseline-status>
+<nav-component to="./scroll-state.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>

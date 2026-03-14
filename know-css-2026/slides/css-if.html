@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/know-css-2026/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/know-css-2026/assets/baseline-tRoFT2st.js"></script>
+    <link rel="stylesheet" crossorigin href="/know-css-2026/assets/baseline-D4cyZ6l7.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Davide Di Pumpo</span>
+        <span>2026</span>
+      </header>
+      <section><h3 class="accent">CSS if()</h3>
+
+<h4>The space hack:  before</h4>
+<pre><code class="hljs" data-highlighted="yes">
+  <span class="hljs-selector-class">.btn</span> {
+    <span class="hljs-attr">--is-danger</span>: ;
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--is-danger, crimson) dodgerblue;
+    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--is-danger, white) white;
+  }
+  <span class="hljs-selector-class">.btn</span><span class="hljs-selector-class">.danger</span> { <span class="hljs-attr">--is-danger</span>: initial; }
+</code></pre>
+
+<div class="fragment">
+  <h4>CSS if():  after</h4>
+  <pre><code class="hljs" data-highlighted="yes">
+    <span class="hljs-selector-class">.btn</span> {
+      <span class="hljs-attribute">background</span>: <span class="hljs-built_in">if</span>(<span class="hljs-built_in">style</span>(--variant: danger): crimson; else: dodgerblue);
+      <span class="hljs-attribute">color</span>: white;
+    }
+  </code></pre>
+</div>
+
+<div class="fragment">
+  <h4>Component variants via style queries</h4>
+  <style>
+    .badge-demo {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .badge-demo .badge {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--border-radius-lg);
+      font-weight: 600;
+      color: white;
+      font-size: 0.95rem;
+      background: if(
+        style(--status: success): seagreen;
+        style(--status: warning): goldenrod;
+        style(--status: error): crimson;
+        else: gray
+      );
+    }
+  </style>
+
+  <pre><code class="hljs" data-highlighted="yes">
+    <span class="hljs-selector-class">.badge</span> {
+      <span class="hljs-attribute">background</span>: <span class="hljs-built_in">if</span>(
+        <span class="hljs-built_in">style</span>(--status: success): seagreen;
+        style(<span class="hljs-attr">--status</span>: warning): goldenrod;
+        style(<span class="hljs-attr">--status</span>: error): crimson;
+        else: gray
+      );
+    }
+  </code></pre>
+
+  <div class="badge-demo">
+    <span class="badge" style="--status: success">Success</span>
+    <span class="badge" style="--status: warning">Warning</span>
+    <span class="badge" style="--status: error">Error</span>
+    <span class="badge">Default</span>
+  </div>
+</div>
+
+<p class="fragment light">The end of the space hack era.</p>
+
+<baseline-status featureid="if"></baseline-status>
+<nav-component to="./musthave.html"></nav-component>
+</section>
+      <footer>You don't know CSS</footer>
+    </main>
+  
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+
+</body></html>
