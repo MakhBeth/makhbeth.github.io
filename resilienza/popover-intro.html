@@ -3,8 +3,8 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Frontend Resilience</title>
-		<script type="module" crossorigin src="/resilienza/assets/baseline-CfV8gfof.js"></script>
-		<link rel="stylesheet" crossorigin href="/resilienza/assets/baseline-Djdx_k3A.css">
+		<script type="module" crossorigin src="/resilienza/assets/baseline-BTH3OR2N.js"></script>
+		<link rel="stylesheet" crossorigin href="/resilienza/assets/baseline-D6kNW1zk.css">
 	</head>
 	<body>
 		<header>
@@ -12,20 +12,17 @@
 			<span>30 Mar 2026</span>
 		</header>
 		<main>
-			<section><h1 class="accent">The Native Accordion</h1>
+			<section><h1 class="accent">Method 2</h1>
+<h2>Popover API</h2>
 
-<p>The <code>&lt;details&gt;</code> element gives you an accordion for free.</p>
+<p>The <code>popover</code> attribute + <code>popovertarget</code> = dropdown without JS.</p>
 
 <ul class="fragment">
-	<li>No JavaScript needed</li>
+	<li>Built-in light dismiss (click outside to close)</li>
+	<li>Top layer — no z-index wars</li>
 	<li>Accessible by default</li>
-	<li>Keyboard navigable</li>
-	<li>Works everywhere</li>
+	<li>Works with <code>&lt;button&gt;</code> — semantic and keyboard-friendly</li>
 </ul>
-
-<p class="fragment light">
-	Add <code>name</code> attribute to create exclusive accordions — only one open at a time.
-</p>
 
 <style>
 	ul {
@@ -35,7 +32,7 @@
 	}
 </style>
 
-<nav-component to="./accordion-demo.html"><a href="./accordion-demo.html">›</a></nav-component>
+<nav-component to="./popover-demo.html"><a href="./popover-demo.html">›</a></nav-component>
 </section>
 		</main>
 		<footer>Frontend Resilience</footer>
