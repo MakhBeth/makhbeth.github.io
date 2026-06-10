@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Luci e ombre: solo blur</h1>
+<p class="light">
+	Una <strong>famiglia di filtri</strong> generata in un loop, e un po' di bianco sfocato:
+	il riflesso sul bordo del piatto e la goccia d'acqua.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">&lt;!-- blur1…blur10 generati in un solo loop --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"i in 10"</span> <span class="hljs-attr">:id</span>=<span class="hljs-string">"`blur${i + 1}`"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">feGaussianBlur</span> <span class="hljs-attr">:stdDeviation</span>=<span class="hljs-string">"3 * i + 1"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- la goccia d'acqua: un cerchio bianco sfocato --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"4"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"white"</span> <span class="hljs-attr">filter</span>=<span class="hljs-string">"url(#blur3)"</span> /&gt;</span></code></pre>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">/* il riflesso sul bordo del piatto: stroke bianco + blur */</span>
+<span class="hljs-selector-class">.showerTray</span> <span class="hljs-selector-class">.light</span> {
+  <span class="hljs-attribute">stroke</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">1</span>);
+  <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">4</span>;
+  <span class="hljs-attribute">fill</span>: none;
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">#blur2</span>);
+}</code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 0.6rem auto 0;
+		font-size: clamp(0.78rem, 1.35vw, 1.15rem);
+	}
+</style>
+
+<nav-component to="./shower-45-oklch.html"><a href="./shower-45-oklch.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

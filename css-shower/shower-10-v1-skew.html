@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">v1: il trucco</h1>
+<p class="light">Due <code>&lt;rect&gt;</code> e uno <code>skewY(30deg)</code>. Niente prospettiva vera.</p>
+
+<div class="v1-stage">
+	<img src="/css-shower/shower/v1-skew.resize.gif" alt="Prima versione dello shower previewer: due facce in CSS skew che si deformano">
+</div>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		margin-bottom: 0.25rem;
+	}
+	.v1-stage {
+		display: flex;
+		justify-content: center;
+		margin: 0.75rem 0;
+	}
+	.v1-stage img {
+		max-height: 60vh;
+		border-radius: 0.5rem;
+		background: #fff;
+	}
+</style>
+
+<nav-component to="./shower-20-webcomponent.html"><a href="./shower-20-webcomponent.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

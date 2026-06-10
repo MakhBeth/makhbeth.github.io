@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Cosa non sono riuscito a risolvere</h1>
+<p class="light">Qui ho capito i limiti di una soluzione pura CSS.</p>
+
+<p class="fragment limite">
+	<strong class="accent">Prospettiva.</strong>
+	Lo skew è una bugia: niente prospettiva vera, i lati restano simmetrici.
+</p>
+<p class="fragment limite">
+	<strong class="accent">Manutenibilità.</strong>
+	Decine di custom property e <code>calc()</code> annidati: intoccabili senza rompere tutto.
+</p>
+<p class="fragment limite">
+	<strong class="accent">Testabilità.</strong>
+	Un <code>calc()</code> non lo testi: la matematica va estratta in JS per poterla provare.
+</p>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	.limite {
+		max-width: 900px;
+		margin: 1.2rem auto;
+		font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+		text-wrap: balance;
+	}
+</style>
+
+<nav-component to="./shower-40-modern.html"><a href="./shower-40-modern.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

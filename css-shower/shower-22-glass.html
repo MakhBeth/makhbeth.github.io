@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Il vetro</h1>
+<p class="light">
+	Trasparenza = <code>fill-opacity</code>. Satinato = quanto <strong>sfochi</strong>
+	ciò che sta dietro.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">&lt;!-- vetro tinto: l'opacità del riempimento È la trasparenza scelta --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">polygon</span>
+  <span class="hljs-attr">:fill</span>=<span class="hljs-string">"options.glass.color.code"</span>
+  <span class="hljs-attr">:fill-opacity</span>=<span class="hljs-string">"(options.glass.color.transparency ?? 0) / 100"</span> /&gt;</span>
+
+<span class="hljs-comment">&lt;!-- satinato: sfoca ciò che si vede DIETRO il vetro --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">filter</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"satinationBlur"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">feGaussianBlur</span> <span class="hljs-attr">:stdDeviation</span>=<span class="hljs-string">"satination * 5"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span></code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 1rem auto 0;
+		font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+	}
+</style>
+
+<nav-component to="./shower-26-dithering.html"><a href="./shower-26-dithering.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

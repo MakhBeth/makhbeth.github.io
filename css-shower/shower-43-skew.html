@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Lo skew, di nuovo</h1>
+<p class="light">
+	La v1 era <strong>tutta</strong> <code>skewY</code>. Qui lo skew resta solo sui dettagli
+	(muro, maniglie, blocchi), per farli combaciare con l'angolo del vetro.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">/* il muro si inclina dell'angolo del lato */</span>
+<span class="hljs-selector-class">.wall</span><span class="hljs-selector-class">.left</span>   { <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">skewY</span>(<span class="hljs-built_in">var</span>(--angle-left-deg)) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">180deg</span>); }
+
+<span class="hljs-comment">/* la maniglia segue, ma più morbida */</span>
+<span class="hljs-selector-class">.handle</span><span class="hljs-selector-class">.left</span> { <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">skewY</span>(<span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--angle-left-deg) * <span class="hljs-number">0.2</span>)); }
+
+<span class="hljs-comment">/* i blocchi compensano anche l'angolo isometrico di base */</span>
+<span class="hljs-selector-class">.blocks-container</span><span class="hljs-selector-class">.right</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">skewY</span>(<span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--angle-right-deg) * -<span class="hljs-number">1</span> + <span class="hljs-number">1deg</span> * <span class="hljs-built_in">var</span>(--base-skew-angle)));
+}</code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 1rem auto 0;
+		font-size: clamp(0.8rem, 1.4vw, 1.2rem);
+	}
+</style>
+
+<nav-component to="./shower-44-blur.html"><a href="./shower-44-blur.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

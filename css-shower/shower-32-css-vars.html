@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Layout guidato dal CSS</h1>
+<p class="light">
+	Il JS calcola <strong>solo i numeri</strong> e li butta in custom property.
+	Il layout lo fa il CSS con <code>calc()</code>: niente attributi settati a mano.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">// buildCanvasStyle.ts: JS → decine di custom property</span>
+<span class="hljs-keyword">return</span> {
+  <span class="hljs-string">"--base-front-x-px"</span>:             <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-built_in">Math</span>.round(points.base.front.x)}</span>px`</span>,
+  <span class="hljs-string">"--glass-left-bottom-left-x-px"</span>: <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-built_in">Math</span>.round(points.glass.left.bottomLeft.x)}</span>px`</span>,
+  <span class="hljs-string">"--angle-left-deg"</span>:              <span class="hljs-string">`<span class="hljs-subst">${dimensions.skewAngleLeft.value}</span>deg`</span>,
+  <span class="hljs-comment">// …e così via, tutta la geometria</span>
+}</code></pre>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-comment">/* il CSS posiziona tutto leggendo le variabili */</span>
+<span class="hljs-selector-class">.wall</span><span class="hljs-selector-class">.left</span> {
+  <span class="hljs-attribute">width</span>:  <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--base-front-x-px) - <span class="hljs-built_in">var</span>(--glass-left-bottom-left-x-px));
+  <span class="hljs-attribute">height</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--tray-front-y-px) - <span class="hljs-built_in">var</span>(--glass-left-bottom-right-y-px));
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">skewY</span>(<span class="hljs-built_in">var</span>(--angle-left-deg)) <span class="hljs-built_in">rotateY</span>(<span class="hljs-number">180deg</span>);
+}</code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 0.6rem auto 0;
+		font-size: clamp(0.75rem, 1.3vw, 1.1rem);
+	}
+</style>
+
+<nav-component to="./shower-38-limiti.html"><a href="./shower-38-limiti.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

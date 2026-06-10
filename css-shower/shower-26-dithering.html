@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Il dithering</h1>
+<p class="light">
+	Un piccolo JPEG di rumore <strong>moltiplicato</strong> sopra l'SVG: grana
+	"fotografica" al posto del vettoriale piatto.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-selector-class">.noise-overlay</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">inset</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">var</span>(--noise-texture);   <span class="hljs-comment">/* un piccolo JPEG di rumore */</span>
+  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">10%</span> <span class="hljs-number">10%</span>;
+  <span class="hljs-attribute">background-repeat</span>: repeat;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.2</span>;
+  <span class="hljs-attribute">mask</span>: <span class="hljs-built_in">radial-gradient</span>(circle, black <span class="hljs-number">50%</span>, transparent <span class="hljs-number">70%</span>);  <span class="hljs-comment">/* vignetta */</span>
+  <span class="hljs-attribute">mix-blend-mode</span>: multiply;   <span class="hljs-comment">/* moltiplica i pixel → scurisce a chiazze */</span>
+}</code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 1rem auto 0;
+		font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+	}
+</style>
+
+<nav-component to="./shower-30-svg.html"><a href="./shower-30-svg.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

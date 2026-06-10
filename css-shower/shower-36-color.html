@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Farsi una doccia col CSS</title>
+		<script type="module" crossorigin src="/css-shower/assets/CodeHighlight-C60AdbMG.js"></script>
+		<link rel="stylesheet" crossorigin href="/css-shower/assets/CodeHighlight-Djdx_k3A.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Shower Previewer</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Un colore → tutto il metallo</h1>
+<p class="light">
+	Da <strong>un solo colore</strong> scelto dall'utente derivi luci, ombre e riempimenti
+	con i <em>relative colors</em> OKLCH, e un <code>@supports</code> come fallback.
+</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-selector-pseudo">:root</span> { <span class="hljs-attr">--fittings-color</span>: <span class="hljs-number">#c0c0c0</span>; }   <span class="hljs-comment">/* l'unico colore in input */</span>
+
+<span class="hljs-selector-class">.thick</span> {
+  <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">var</span>(--fittings-color);                       <span class="hljs-comment">/* fallback */</span>
+  <span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">color</span>: oklch(from red l c h)) {
+    <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">oklch</span>(from <span class="hljs-built_in">var</span>(--fittings-color) <span class="hljs-built_in">clamp</span>(<span class="hljs-number">0.5</span>, <span class="hljs-built_in">calc</span>(l * <span class="hljs-number">1.5</span>), <span class="hljs-number">2</span>) c h);  <span class="hljs-comment">/* luce */</span>
+  }
+}
+
+<span class="hljs-selector-class">.filling</span> {
+  <span class="hljs-attribute">fill</span>: <span class="hljs-built_in">oklch</span>(from <span class="hljs-built_in">var</span>(--fittings-color) <span class="hljs-built_in">clamp</span>(<span class="hljs-number">0.55</span>, <span class="hljs-built_in">calc</span>(l * <span class="hljs-number">0.8</span>), <span class="hljs-number">0</span>) c h);   <span class="hljs-comment">/* ombra */</span>
+}</code></pre>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 1rem auto 0;
+		font-size: clamp(0.8rem, 1.4vw, 1.2rem);
+	}
+</style>
+
+<nav-component to="./shower-43-skew.html"><a href="./shower-43-skew.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Farsi una doccia col CSS</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>
