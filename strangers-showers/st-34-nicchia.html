@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Strangers Showers</title>
+		<script type="module" crossorigin src="/strangers-showers/assets/CodeHighlight-e-wvt7Gc.js"></script>
+		<link rel="stylesheet" crossorigin href="/strangers-showers/assets/CodeHighlight-xP8uPm-2.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Strangers Showers</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Torniamo alla linea gialla</h1>
+<p class="light">
+	Quella dell'inizio: doccia a nicchia, senza piatto, il segnalatore giallo
+	<strong>sotto le ombre del pavimento</strong>. Due tentativi:
+</p>
+
+<div class="two">
+	<div class="fragment">
+		<h2>9 set 2026 · il cerotto</h2>
+		<pre><code class="hljs" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"focus left width"</span>
+  <span class="hljs-attr">:style</span>=<span class="hljs-string">"options.sides === 1 &amp;&amp; !options.showerTray.exist
+    ? { transform: 'translateY(-50px)' }
+    : undefined"</span> /&gt;</span></code></pre>
+		<p class="light">Sposto la linea di 50px. Si vede… finché qualcuno non cambia le ombre.</p>
+	</div>
+	<div class="fragment">
+		<h2>10 set 2026 · la cura</h2>
+		<pre><code class="hljs" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"shower-preview-svg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Shower</span> … /&gt;</span>
+  <span class="hljs-comment">&lt;!-- sopra muri, ombre e maschere --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MeasurementHighlights</span> … /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre>
+		<p class="light">Nessuna coordinata magica: i segnalatori vengono <strong>disegnati per ultimi</strong>.</p>
+	</div>
+</div>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	.two {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		max-width: 1300px;
+		margin: 1rem auto 0;
+		text-align: left;
+	}
+	.two h2 {
+		font-size: var(--font-size-lg);
+		color: var(--color-accent);
+		margin: 0 0 0.5rem;
+	}
+	.two pre {
+		font-size: clamp(0.7rem, 1.2vw, 1rem);
+		margin: 0;
+	}
+	.two p {
+		font-size: var(--font-size-sm);
+	}
+</style>
+
+<nav-component to="./st-36-pixel.html"><a href="./st-36-pixel.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Strangers Showers: di docce, punti e demogorgoni</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

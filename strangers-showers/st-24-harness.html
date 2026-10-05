@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Strangers Showers</title>
+		<script type="module" crossorigin src="/strangers-showers/assets/CodeHighlight-e-wvt7Gc.js"></script>
+		<link rel="stylesheet" crossorigin href="/strangers-showers/assets/CodeHighlight-xP8uPm-2.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Strangers Showers</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Come si congela una doccia</h1>
+<p class="light">Vitest + happy-dom. Che però <strong>non ha layout</strong>: tutto quello che dipende dal browser va fissato.</p>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-keyword">const</span> <span class="hljs-title function_">renderSvg</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"><span class="hljs-attr">inputs</span>: <span class="hljs-title class_">Inputs</span></span>) =&gt; {
+  <span class="hljs-keyword">const</span> wrapper = <span class="hljs-title function_">mount</span>(<span class="hljs-title class_">ShowerPreviewerComponent</span>, { <span class="hljs-attr">props</span>: { inputs } })
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">nextTick</span>()
+
+  <span class="hljs-comment">// niente layout → fisso io la larghezza e sveglio il ResizeObserver (stub)</span>
+  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(container, <span class="hljs-string">"clientWidth"</span>, { <span class="hljs-attr">value</span>: <span class="hljs-number">800</span> })
+  observerCallbacks.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">cb</span>) =&gt;</span> <span class="hljs-title function_">cb</span>())
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">nextTick</span>()
+
+  <span class="hljs-keyword">return</span> <span class="hljs-title function_">normalizeSvg</span>(wrapper.<span class="hljs-title function_">find</span>(<span class="hljs-string">"#shower-preview-svg"</span>).<span class="hljs-property">element</span>.<span class="hljs-property">outerHTML</span>)
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> { snapshot, inputs } <span class="hljs-keyword">of</span> cases) {
+  <span class="hljs-title function_">it</span>(snapshot, <span class="hljs-title function_">async</span> () =&gt; {
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">expect</span>(<span class="hljs-keyword">await</span> <span class="hljs-title function_">renderSvg</span>(inputs)).<span class="hljs-title function_">toMatchFileSnapshot</span>(<span class="hljs-string">`./__snapshots__/<span class="hljs-subst">${snapshot}</span>`</span>)
+  })
+}</code></pre>
+
+<p class="fragment light small">
+	Camera ferma (nessun evento puntatore), immagini come <code>data:</code> URL (niente fetch),
+	hash <code>data-v-*</code> e commenti ripuliti.
+</p>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 0.75rem auto;
+		font-size: clamp(0.7rem, 1.2vw, 1rem);
+		text-align: left;
+	}
+	.small {
+		max-width: 900px;
+		margin: 0 auto;
+		font-size: var(--font-size-sm);
+	}
+</style>
+
+<nav-component to="./st-26-migrazione.html"><a href="./st-26-migrazione.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Strangers Showers: di docce, punti e demogorgoni</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

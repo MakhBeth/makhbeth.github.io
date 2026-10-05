@@ -1,0 +1,1 @@
+import"./CodeHighlight-e-wvt7Gc.js";const t=document.querySelector(".tagline .up"),e=document.querySelector(".tagline .down"),o=()=>e.style.setProperty("--fit",t.offsetWidth/e.offsetWidth);document.fonts.ready.then(o);new ResizeObserver(o).observe(t);
