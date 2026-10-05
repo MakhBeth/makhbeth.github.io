@@ -2,19 +2,19 @@
 		<meta charset="UTF-8">
 		<link rel="icon" type="image/svg+xml" href="/vite.svg">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Stranger Showers</title>
+		<title>Strangers’ Showers</title>
 		<script type="module" crossorigin src="/stranger-showers/assets/index-B47j6V8Q.js"></script>
 		<link rel="stylesheet" crossorigin href="/stranger-showers/assets/CodeHighlight-xP8uPm-2.css">
 	</head>
 	<body>
 		<header>
 			<span>Davide Di Pumpo</span>
-			<span>Stranger Showers</span>
+			<span>Strangers’ Showers</span>
 		</header>
 		<main>
 			<section><div class="title-wrap">
-<h1 class="logo" aria-label="Stranger Showers">
-	<span class="row1" aria-hidden="true"><span class="big">S</span><span class="small">TRANGE</span><span class="big">R</span></span>
+<h1 class="logo" aria-label="Strangers’ Showers">
+	<span class="row1" aria-hidden="true"><span class="big">S</span><span class="small">TRANGER</span><span class="big">S</span><span class="apos">’</span></span>
 	<span class="row2" aria-hidden="true"><span class="bar"></span><span class="word">SHOWERS</span><span class="bar"></span></span>
 </h1>
 
@@ -54,10 +54,16 @@
 		display: flex;
 		align-items: center;
 	}
+	/* apostrofo alto come le lettere piccole, appoggiato alla loro linea superiore */
+	.row1 .apos {
+		align-self: flex-start;
+		margin-top: 0.12em;
+		margin-left: 0.04em;
+	}
 	.row1 .big {
 		font-size: 1.35em;
 	}
-	/* la riga sopra le lettere piccole, da S a R */
+	/* la riga sopra le lettere piccole, da S a S */
 	.row1 .small {
 		position: relative;
 		padding-top: 0.08em;
@@ -70,7 +76,7 @@
 		background: var(--red);
 		box-shadow: var(--glow);
 	}
-	/* SHOWERS più piccolo, con le barre ai lati che arrivano alla larghezza di STRANGER */
+	/* SHOWERS più piccolo, con le barre ai lati che arrivano alla larghezza di STRANGERS’ */
 	.row2 {
 		display: flex;
 		align-items: center;
@@ -135,7 +141,7 @@
 <nav-component to="./st-00-cold-open.html" no-back=""><a href="./st-00-cold-open.html">›</a></nav-component>
 </section>
 		</main>
-		<footer>Stranger Showers: di docce, punti e demogorgoni</footer>
+		<footer>Strangers’ Showers: di docce, punti e demogorgoni</footer>
 	
 	<style>
 		@view-transition {
