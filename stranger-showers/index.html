@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Stranger Showers</title>
+		<script type="module" crossorigin src="/stranger-showers/assets/index-B47j6V8Q.js"></script>
+		<link rel="stylesheet" crossorigin href="/stranger-showers/assets/CodeHighlight-xP8uPm-2.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Stranger Showers</span>
+		</header>
+		<main>
+			<section><div class="title-wrap">
+<h1 class="logo" aria-label="Stranger Showers">
+	<span class="row1" aria-hidden="true"><span class="big">S</span><span class="small">TRANGE</span><span class="big">R</span></span>
+	<span class="row2" aria-hidden="true"><span class="bar"></span><span class="word">SHOWERS</span><span class="bar"></span></span>
+</h1>
+
+<div class="tagline">
+	<p class="up">Come si testa ciò che si vede</p>
+	<p class="down" aria-label="Come si testa cosa non si vede">Come si testa cosa non si vede</p>
+</div>
+</div>
+
+
+<style>
+	.title-wrap {
+		display: grid;
+		justify-items: center;
+		text-align: center;
+	}
+	.logo {
+		--red: oklch(60% 0.24 27);
+		--glow:
+			0 0 6px oklch(60% 0.24 27 / 0.9),
+			0 0 24px oklch(55% 0.24 27 / 0.6),
+			0 0 60px oklch(50% 0.24 27 / 0.4);
+		display: inline-grid;
+		font-family: Georgia, "Times New Roman", serif;
+		font-weight: 700;
+		font-size: clamp(2.5rem, 9vw, 7rem);
+		line-height: 1;
+		margin: 0 auto 2rem;
+	}
+	.logo .row1,
+	.logo .word {
+		color: transparent;
+		-webkit-text-stroke: 2px var(--red);
+		text-shadow: var(--glow);
+	}
+	.row1 {
+		display: flex;
+		align-items: center;
+	}
+	.row1 .big {
+		font-size: 1.35em;
+	}
+	/* la riga sopra le lettere piccole, da S a R */
+	.row1 .small {
+		position: relative;
+		padding-top: 0.08em;
+	}
+	.row1 .small::before {
+		content: "";
+		position: absolute;
+		inset: -0.06em 0 auto;
+		height: 3px;
+		background: var(--red);
+		box-shadow: var(--glow);
+	}
+	/* SHOWERS più piccolo, con le barre ai lati che arrivano alla larghezza di STRANGER */
+	.row2 {
+		display: flex;
+		align-items: center;
+		gap: 0.25em;
+		font-size: 0.62em;
+		margin-top: 0.12em;
+	}
+	.row2 .bar {
+		flex: 1;
+		height: 3px;
+		background: var(--red);
+		box-shadow: var(--glow);
+	}
+	.tagline {
+		display: grid;
+		justify-items: center;
+	}
+	.tagline p {
+		width: max-content;
+		margin: 0;
+		line-height: 1;
+		font-size: var(--font-size-xl);
+		font-weight: 700;
+	}
+	.tagline .up {
+		color: var(--color-text);
+	}
+	/* il Sottosopra: la stessa frase, capovolta come un riflesso */
+	.tagline .down {
+		/* --fit la calcola lo script: stessa larghezza della riga sopra */
+		transform: scale(var(--fit, 1), -1);
+		/* nessuna discendente: le due righe si toccano sulla linea di base */
+		margin-top: -0.24em;
+		color: oklch(60% 0.2 27);
+		text-shadow: 0 0 8px oklch(60% 0.24 27 / 0.7);
+		filter: blur(0.4px);
+		/* riflesso: pieno sulla linea di base, sfuma verso alpha 0.5 (il box è capovolto: "to top" = verso il basso a schermo) */
+		mask-image: linear-gradient(to top, rgb(0 0 0 / 0.85), rgb(0 0 0 / 0.5));
+		animation: upside-down-flicker 5s steps(1, end) infinite;
+	}
+	/* lucine che sfarfallano, irregolari */
+	@keyframes upside-down-flicker {
+		0%, 100% { opacity: 1; }
+		8% { opacity: 0.35; }
+		10% { opacity: 1; }
+		12% { opacity: 0.5; }
+		14% { opacity: 1; }
+		47% { opacity: 0.7; }
+		49% { opacity: 1; }
+		71% { opacity: 0.3; }
+		72% { opacity: 1; }
+		73% { opacity: 0.45; }
+		76% { opacity: 1; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.tagline .down {
+			animation: none;
+		}
+	}
+</style>
+
+<nav-component to="./st-00-cold-open.html" no-back=""><a href="./st-00-cold-open.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Stranger Showers: di docce, punti e demogorgoni</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>

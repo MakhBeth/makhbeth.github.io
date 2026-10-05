@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/svg+xml" href="/vite.svg">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Stranger Showers</title>
+		<script type="module" crossorigin src="/stranger-showers/assets/CodeHighlight-e-wvt7Gc.js"></script>
+		<link rel="stylesheet" crossorigin href="/stranger-showers/assets/CodeHighlight-xP8uPm-2.css">
+	</head>
+	<body>
+		<header>
+			<span>Davide Di Pumpo</span>
+			<span>Stranger Showers</span>
+		</header>
+		<main>
+			<section><h1 class="accent">Si testano i punti, non i pixel</h1>
+
+<pre><code class="hljs" data-highlighted="yes"><span class="hljs-title function_">it</span>(<span class="hljs-string">"sloped: maxHeight uses height.internal + tray"</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> inputs = <span class="hljs-title function_">ref</span>(<span class="hljs-title function_">makeBaseInputs</span>({
+    <span class="hljs-attr">panelShape</span>: <span class="hljs-string">"sloped"</span>,
+    <span class="hljs-attr">height</span>: { <span class="hljs-attr">left</span>: <span class="hljs-number">1500</span>, <span class="hljs-attr">right</span>: <span class="hljs-number">1500</span>, <span class="hljs-attr">internal</span>: <span class="hljs-number">2000</span> }
+  }))
+  <span class="hljs-keyword">const</span> { dimensions } = <span class="hljs-title function_">useShowerPreviewMath</span>(inputs)
+  <span class="hljs-title function_">expect</span>(dimensions.<span class="hljs-property">value</span>.<span class="hljs-property">maxHeight</span>.<span class="hljs-property">value</span>).<span class="hljs-title function_">toBe</span>(<span class="hljs-number">2000</span> + <span class="hljs-number">150</span>)
+})
+
+<span class="hljs-title function_">it</span>(<span class="hljs-string">"sloped valley: front-centre seam drops to internal height"</span>, …)
+<span class="hljs-title function_">it</span>(<span class="hljs-string">"topWidth is clamped down to width when larger"</span>, …)
+<span class="hljs-title function_">it</span>(<span class="hljs-string">"rail spans the door panel top edge with 13mm end margins"</span>, …)</code></pre>
+
+<div class="stats">
+	<p class="fragment"><strong>37</strong><span>test sulla geometria</span></p>
+	<p class="fragment"><strong>0</strong><span>componenti montati</span></p>
+	<p class="fragment"><strong>~20 ms</strong><span>per girarli tutti</span></p>
+</div>
+
+<style>
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		margin-bottom: 0.25rem;
+	}
+	pre {
+		max-width: 1100px;
+		margin: 0.75rem auto;
+		font-size: clamp(0.75rem, 1.3vw, 1.1rem);
+		text-align: left;
+	}
+	.stats {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+	}
+	.stats p {
+		display: grid;
+		margin: 0;
+	}
+	.stats strong {
+		font-size: var(--font-size-3xl);
+		color: var(--color-accent);
+		line-height: 1;
+	}
+	.stats span {
+		color: var(--color-text-light);
+	}
+</style>
+
+<nav-component to="./st-20-lucine.html"><a href="./st-20-lucine.html">›</a></nav-component>
+</section>
+		</main>
+		<footer>Stranger Showers: di docce, punti e demogorgoni</footer>
+	
+	<style>
+		@view-transition {
+			navigation: auto;
+		}
+	</style>
+
+</body></html>
